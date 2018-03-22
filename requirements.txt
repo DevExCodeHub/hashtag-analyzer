@@ -1,0 +1,7 @@
+tweepy==3.5.0
+Flask==0.12.2
+requests==2.18.4
+watson-developer-cloud==0.26.1
+jsonschema==2.6.0
+appdirs==1.4.3
+python-dotenv==0.7.1

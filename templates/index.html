@@ -1,0 +1,112 @@
+<!DOCTYPE HTML>
+
+<html>
+<head>
+  <title>Hashtags Analyzer</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" 
+  integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" 
+  crossorigin="anonymous">
+
+  <link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,300,300italic,100' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.css" />
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+        crossorigin="anonymous">
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/circle.css') }}">
+  <link rel="stylesheet" type="text/css" href="/static/css/style.css">
+
+</head>
+
+
+<body> 
+
+    <!-- map view -->
+     <section class="map">
+        
+        <div id="holder_1000" style="position:relative;">
+
+        <div class="arrow bounce">
+          <!-- <h3>Analyze Hashtags</h3> -->
+          <i id="arrow" class="fa fa-arrow-down fa-2x"></i>
+        </div>
+    </section>
+
+    <!-- Map Hover -->
+    <div class="popup">Hi there</div>
+  
+    <!-- watson view -->
+    <section class="answers">
+    
+    <div class="container">
+
+      <!-- logo & form -->
+      <div class="header">
+          <div class="logo">
+            <img src="/static/img/watson.png">          
+          </div>
+
+          <div class="twitter-form">
+            <form id="search-box" method='post' action='/'>
+              <div class="input-group">
+                <span class="input-group-addon" id="basic-addon1">#</span>
+                <input id="user-input" type="text" class="form-control" name="hashtag" placeholder="twitter hashtag" required=""> 
+                <input id="lat" type="hidden" name="lat">
+                <input id="lng" type="hidden" name="lng">
+
+              </div>
+              <button class="btn">Analyze it!</button>
+            </form>
+          </div>
+    </div>
+
+    <!-- results -->
+    <div class="result box">
+
+          <!-- loading -->
+          <div id='loading' style="display:none; width: 10%; margin: 10% auto;">
+              <i class="fa fa-circle-o-notch fa-spin fa-2x fa-fw" style="font-size:65px; color: white;"></i>
+          </div>
+
+          <div id='error' style="display:none; width: 10%; margin: 10% auto;">
+            <i class="fa fa-frown-o fa-5x fa-fw" aria-hidden="true"></i>
+            <p>Not Enough Tweets</p>
+          </div>
+
+          <!-- tone analyzer output -->
+          <section class="result">
+            <div class="row" id="results"></div>
+         </section>
+
+     </div>
+
+   </div>
+  </section>
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js" sync></script>
+  <script src="/static/js/raphael_2.0.2.js" type="text/javascript" sync></script>
+  <script src="/static/js/world_1000.js" type="text/javascript" sync></script>
+
+ <script type="text/javascript" src='/static/js/watson.js' sync></script>
+ <script type="text/javascript" src='/static/js/map.js' sync></script>
+</body> 
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
